@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ATPopPresentationController : UIPresentationController<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, strong, nullable) UIScreenEdgePanGestureRecognizer * gestureRecognizer;
+@property (nonatomic, assign) CGFloat contentHeight;
 
 @end
 

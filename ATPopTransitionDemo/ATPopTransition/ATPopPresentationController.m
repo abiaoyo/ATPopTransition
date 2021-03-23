@@ -30,6 +30,7 @@
     if (self) {
         // 自定义modalPresentationStyle
         presentedViewController.modalPresentationStyle= UIModalPresentationCustom;
+        self.contentHeight = UIScreen.mainScreen.bounds.size.height*(520/667.0);
     }
     return self;
 }
@@ -118,7 +119,7 @@
     [containerView addSubview:toView];
     
     BOOL present = (toVc.presentingViewController == fromVc) ? YES : NO;
-    CGFloat targetHeight = UIScreen.mainScreen.bounds.size.height*(530/667.0);
+    CGFloat targetHeight = self.contentHeight;
     if (present) {
         toView.frame = CGRectMake(0, containerView.bounds.size.height, containerView.bounds.size.width, targetHeight);
         toVc.view.frame = CGRectMake(0, 0, containerView.bounds.size.width, targetHeight);
