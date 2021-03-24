@@ -24,16 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self ATPop_AddInteractiveGes];
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
     
-//    - (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(nullable id)target action:(nullable SEL)action;
-    
-    UIBarButtonItem * closeItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemClose target:self action:@selector(clickCloseButton)];
-    self.navigationItem.leftBarButtonItem = closeItem;
+    if(self.navigationController.viewControllers.count <= 1){
+        [self ATPop_AddInteractiveGes];
+        
+        UIBarButtonItem * closeItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemClose target:self action:@selector(clickCloseButton)];
+        self.navigationItem.leftBarButtonItem = closeItem;
+    }
 }
 
 - (void)clickCloseButton{
