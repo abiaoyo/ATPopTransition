@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187D0AA32629348300C846F8 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D0AA22629348300C846F8 /* BaseNavigationController.m */; };
+		187D0AA7262947D700C846F8 /* ATPopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D0AA6262947D700C846F8 /* ATPopNavigationController.m */; };
+		187D0C56262955E900C846F8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D0C54262955E900C846F8 /* WebViewController.m */; };
+		187D0C57262955E900C846F8 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D0C55262955E900C846F8 /* WebViewController.xib */; };
 		1893FD3C2609D57F009428DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD3B2609D57F009428DF /* AppDelegate.m */; };
 		1893FD3F2609D57F009428DF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD3E2609D57F009428DF /* SceneDelegate.m */; };
 		1893FD422609D57F009428DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD412609D57F009428DF /* ViewController.m */; };
@@ -23,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187D0AA12629348300C846F8 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		187D0AA22629348300C846F8 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		187D0AA5262947D700C846F8 /* ATPopNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATPopNavigationController.h; sourceTree = "<group>"; };
+		187D0AA6262947D700C846F8 /* ATPopNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATPopNavigationController.m; sourceTree = "<group>"; };
+		187D0C53262955E900C846F8 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		187D0C54262955E900C846F8 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		187D0C55262955E900C846F8 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		1893FD372609D57F009428DF /* ATPopTransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATPopTransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893FD3A2609D57F009428DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1893FD3B2609D57F009428DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,6 +102,8 @@
 				1893FD482609D581009428DF /* LaunchScreen.storyboard */,
 				1893FD4B2609D581009428DF /* Info.plist */,
 				1893FD4C2609D581009428DF /* main.m */,
+				187D0AA12629348300C846F8 /* BaseNavigationController.h */,
+				187D0AA22629348300C846F8 /* BaseNavigationController.m */,
 			);
 			path = ATPopTransitionDemo;
 			sourceTree = "<group>";
@@ -104,6 +117,8 @@
 				1893FD5B2609D94D009428DF /* ATPopInteractiveTransition.m */,
 				1893FE5A2609DDB7009428DF /* UIViewController+ATPopTransition.h */,
 				1893FE5B2609DDB7009428DF /* UIViewController+ATPopTransition.m */,
+				187D0AA5262947D700C846F8 /* ATPopNavigationController.h */,
+				187D0AA6262947D700C846F8 /* ATPopNavigationController.m */,
 			);
 			path = ATPopTransition;
 			sourceTree = "<group>";
@@ -116,6 +131,9 @@
 				1893FE542609DC07009428DF /* HomeDetailViewController.h */,
 				1893FE552609DC07009428DF /* HomeDetailViewController.m */,
 				1893FE562609DC07009428DF /* HomeDetailViewController.xib */,
+				187D0C53262955E900C846F8 /* WebViewController.h */,
+				187D0C54262955E900C846F8 /* WebViewController.m */,
+				187D0C55262955E900C846F8 /* WebViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -179,6 +197,7 @@
 				1893FE582609DC07009428DF /* HomeDetailViewController.xib in Resources */,
 				1893FD4A2609D581009428DF /* LaunchScreen.storyboard in Resources */,
 				1893FD472609D581009428DF /* Assets.xcassets in Resources */,
+				187D0C57262955E900C846F8 /* WebViewController.xib in Resources */,
 				1893FD452609D57F009428DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,10 +213,13 @@
 				1893FD422609D57F009428DF /* ViewController.m in Sources */,
 				1893FD3C2609D57F009428DF /* AppDelegate.m in Sources */,
 				1893FD5C2609D94D009428DF /* ATPopInteractiveTransition.m in Sources */,
+				187D0AA32629348300C846F8 /* BaseNavigationController.m in Sources */,
 				1893FD4D2609D581009428DF /* main.m in Sources */,
 				1893FD3F2609D57F009428DF /* SceneDelegate.m in Sources */,
+				187D0C56262955E900C846F8 /* WebViewController.m in Sources */,
 				1893FE5C2609DDB7009428DF /* UIViewController+ATPopTransition.m in Sources */,
 				1893FE522609DBF9009428DF /* HomeViewController.m in Sources */,
+				187D0AA7262947D700C846F8 /* ATPopNavigationController.m in Sources */,
 				1893FD572609D5D0009428DF /* ATPopPresentationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

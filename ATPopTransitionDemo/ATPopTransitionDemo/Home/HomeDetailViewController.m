@@ -6,7 +6,7 @@
 //
 
 #import "HomeDetailViewController.h"
-#import "UIViewController+ATPopTransition.h"
+#import "WebViewController.h"
 
 @interface HomeDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -21,24 +21,18 @@
 #endif
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
-    
-    if(self.navigationController.viewControllers.count <= 1){
-        [self ATPop_AddInteractiveGes];
-        
-        UIBarButtonItem * closeItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemClose target:self action:@selector(clickCloseButton)];
-        self.navigationItem.leftBarButtonItem = closeItem;
-    }
-}
 
-- (void)clickCloseButton{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    [self ATPop_Dismiss];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -56,7 +50,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HomeDetailViewController * vctl = [[HomeDetailViewController alloc] init];
+    WebViewController * vctl = [[WebViewController alloc] init];
     [self.navigationController pushViewController:vctl animated:YES];
 }
 

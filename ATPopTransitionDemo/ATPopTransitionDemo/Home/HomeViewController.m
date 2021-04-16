@@ -9,6 +9,7 @@
 #import "HomeDetailViewController.h"
 #import "ATPopPresentationController.h"
 #import "UIViewController+ATPopTransition.h"
+#import "ATPopNavigationController.h"
 
 @interface HomeViewController ()
 
@@ -20,14 +21,15 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (IBAction)clickDetail:(id)sender {
-//    HomeDetailViewController * vctl = [[HomeDetailViewController alloc] init];
-//    ATPopPresentationController *presentationController = [[ATPopPresentationController alloc] initWithPresentedViewController:vctl presentingViewController:self];
-//    vctl.transitioningDelegate = presentationController;
-//    [self presentViewController:vctl animated:YES completion:nil];
-    
+        
     HomeDetailViewController * vctl = [[HomeDetailViewController alloc] init];
-    UINavigationController * navCtl = [[UINavigationController alloc] initWithRootViewController:vctl];
+    ATPopNavigationController * navCtl = [[ATPopNavigationController alloc] initWithRootViewController:vctl];
     ATPopPresentationController *presentationController = [[ATPopPresentationController alloc] initWithPresentedViewController:navCtl presentingViewController:self];
     navCtl.transitioningDelegate = presentationController;
     [self presentViewController:navCtl animated:YES completion:nil];
