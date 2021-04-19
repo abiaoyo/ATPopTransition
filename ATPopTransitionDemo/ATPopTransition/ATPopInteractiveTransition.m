@@ -10,7 +10,7 @@
 @interface ATPopInteractiveTransition()
 
 @property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
-@property (nonatomic, strong, readonly) UIScreenEdgePanGestureRecognizer * gestureRecognizer;
+@property (nonatomic, strong, readonly) ATPopScreenEdgePanGestureRecognizer * gestureRecognizer;
 @property (nonatomic, readonly) UIRectEdge edge;
 
 @end
@@ -25,7 +25,7 @@
 }
 
 //NS_DESIGNATED_INITIALIZER关键字 意思是最终被指定的初始化方法，在interface只能用一次而且必须以init开头的方法。
-- (instancetype)initWithGestureRecognizer:(UIScreenEdgePanGestureRecognizer*)gestureRecognizer edgeForDragging:(UIRectEdge)edge {
+- (instancetype)initWithGestureRecognizer:(ATPopScreenEdgePanGestureRecognizer*)gestureRecognizer edgeForDragging:(UIRectEdge)edge {
     NSAssert(edge == UIRectEdgeTop || edge == UIRectEdgeBottom ||
              edge == UIRectEdgeLeft || edge == UIRectEdgeRight,
              @"edgeForDragging must be one of UIRectEdgeTop, UIRectEdgeBottom, UIRectEdgeLeft, or UIRectEdgeRight.");
@@ -52,24 +52,41 @@
 }
 
 // 手势触发该方法
--(void)gestureRecognizeDidUpdate:(UIScreenEdgePanGestureRecognizer *)gestureRecognizer{
-    
+-(void)gestureRecognizeDidUpdate:(ATPopScreenEdgePanGestureRecognizer *)gestureRecognizer{
+    NSLog(@"ges.state:%@",@(gestureRecognizer.state));
     switch (gestureRecognizer.state){
         case UIGestureRecognizerStateBegan:
             break;
         case UIGestureRecognizerStateChanged:
             // 调用updateInteractiveTransition来更新动画进度
             // 里面嵌套定义 percentForGesture 方法计算动画进度
-            [self updateInteractiveTransition:[self percentForGesture:gestureRecognizer]];
+            if(gestureRecognizer.openConfirmClose){
+                if(gestureRecognizer.canClose){
+                    [self updateInteractiveTransition:[self percentForGesture:gestureRecognizer]];
+                }
+            }else{
+                [self updateInteractiveTransition:[self percentForGesture:gestureRecognizer]];
+            }
             break;
         case UIGestureRecognizerStateEnded:
             //判断手势位置，要大于一般,就完成这个转场，要小于一半就取消
-            if ([self percentForGesture:gestureRecognizer] >= 0.3f)
-                // 完成交互转场
-                [self finishInteractiveTransition];
-            else
+            if ([self percentForGesture:gestureRecognizer] >= 0.25f){
+                if(gestureRecognizer.openConfirmClose){
+                    if(gestureRecognizer.canClose){
+                        // 完成交互转场
+                        [self finishInteractiveTransition];
+                    }else{
+                        // 取消交互转场
+                        [self cancelInteractiveTransition];
+                    }
+                }else{
+                    // 完成交互转场
+                    [self finishInteractiveTransition];
+                }
+            }else{
                 // 取消交互转场
                 [self cancelInteractiveTransition];
+            }
             break;
         default:
             [self cancelInteractiveTransition];
@@ -78,7 +95,7 @@
 }
 
 // 计算动画进度
--(CGFloat)percentForGesture:(UIScreenEdgePanGestureRecognizer *)gesture{
+- (CGFloat)percentForGesture:(ATPopScreenEdgePanGestureRecognizer *)gesture{
     UIView * transitionContainerView = self.transitionContext.containerView;
     // 手势滑动 在transitionContainerView中 的位置
     // 这个位置判断的方法可以具体根据你的需求确定

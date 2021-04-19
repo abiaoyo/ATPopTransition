@@ -7,11 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+ATPopTransition.h"
+#import "ATPopScreenEdgePanGestureRecognizer.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ATPopPresentationController : UIPresentationController<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, strong, nullable) UIScreenEdgePanGestureRecognizer * gestureRecognizer;
+@property (nonatomic, strong, nullable) ATPopScreenEdgePanGestureRecognizer * gestureRecognizer;
 @property (nonatomic, assign) CGFloat contentHeight;
 
 @end

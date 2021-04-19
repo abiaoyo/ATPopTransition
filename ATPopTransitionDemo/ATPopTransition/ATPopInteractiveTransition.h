@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ATPopScreenEdgePanGestureRecognizer.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ATPopInteractiveTransition : UIPercentDrivenInteractiveTransition
 
-- (instancetype)initWithGestureRecognizer:(UIScreenEdgePanGestureRecognizer*)gestureRecognizer
+- (instancetype)initWithGestureRecognizer:(ATPopScreenEdgePanGestureRecognizer*)gestureRecognizer
                           edgeForDragging:(UIRectEdge)edge;
 
 @end

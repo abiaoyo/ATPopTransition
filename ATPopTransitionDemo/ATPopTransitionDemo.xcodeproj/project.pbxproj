@@ -11,8 +11,9 @@
 		187D0AA7262947D700C846F8 /* ATPopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D0AA6262947D700C846F8 /* ATPopNavigationController.m */; };
 		187D0C56262955E900C846F8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D0C54262955E900C846F8 /* WebViewController.m */; };
 		187D0C57262955E900C846F8 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D0C55262955E900C846F8 /* WebViewController.xib */; };
+		187D12FF262D314400C846F8 /* ATPopScreenEdgePanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D12FE262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.m */; };
+		187D1305262D3D3C00C846F8 /* BUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D1304262D3D3C00C846F8 /* BUAlertView.m */; };
 		1893FD3C2609D57F009428DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD3B2609D57F009428DF /* AppDelegate.m */; };
-		1893FD3F2609D57F009428DF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD3E2609D57F009428DF /* SceneDelegate.m */; };
 		1893FD422609D57F009428DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD412609D57F009428DF /* ViewController.m */; };
 		1893FD452609D57F009428DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893FD432609D57F009428DF /* Main.storyboard */; };
 		1893FD472609D581009428DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893FD462609D581009428DF /* Assets.xcassets */; };
@@ -34,11 +35,13 @@
 		187D0C53262955E900C846F8 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		187D0C54262955E900C846F8 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		187D0C55262955E900C846F8 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		187D12FD262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATPopScreenEdgePanGestureRecognizer.h; sourceTree = "<group>"; };
+		187D12FE262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATPopScreenEdgePanGestureRecognizer.m; sourceTree = "<group>"; };
+		187D1303262D3D3C00C846F8 /* BUAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUAlertView.h; sourceTree = "<group>"; };
+		187D1304262D3D3C00C846F8 /* BUAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUAlertView.m; sourceTree = "<group>"; };
 		1893FD372609D57F009428DF /* ATPopTransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATPopTransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893FD3A2609D57F009428DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1893FD3B2609D57F009428DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1893FD3D2609D57F009428DF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		1893FD3E2609D57F009428DF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		1893FD402609D57F009428DF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1893FD412609D57F009428DF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1893FD442609D57F009428DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,11 +93,11 @@
 		1893FD392609D57F009428DF /* ATPopTransitionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				187D1303262D3D3C00C846F8 /* BUAlertView.h */,
+				187D1304262D3D3C00C846F8 /* BUAlertView.m */,
 				1893FE4F2609DBE6009428DF /* Home */,
 				1893FD3A2609D57F009428DF /* AppDelegate.h */,
 				1893FD3B2609D57F009428DF /* AppDelegate.m */,
-				1893FD3D2609D57F009428DF /* SceneDelegate.h */,
-				1893FD3E2609D57F009428DF /* SceneDelegate.m */,
 				1893FD402609D57F009428DF /* ViewController.h */,
 				1893FD412609D57F009428DF /* ViewController.m */,
 				1893FD432609D57F009428DF /* Main.storyboard */,
@@ -111,14 +114,16 @@
 		1893FD542609D596009428DF /* ATPopTransition */ = {
 			isa = PBXGroup;
 			children = (
-				1893FD552609D5D0009428DF /* ATPopPresentationController.h */,
-				1893FD562609D5D0009428DF /* ATPopPresentationController.m */,
 				1893FD5A2609D94D009428DF /* ATPopInteractiveTransition.h */,
 				1893FD5B2609D94D009428DF /* ATPopInteractiveTransition.m */,
-				1893FE5A2609DDB7009428DF /* UIViewController+ATPopTransition.h */,
-				1893FE5B2609DDB7009428DF /* UIViewController+ATPopTransition.m */,
 				187D0AA5262947D700C846F8 /* ATPopNavigationController.h */,
 				187D0AA6262947D700C846F8 /* ATPopNavigationController.m */,
+				1893FD552609D5D0009428DF /* ATPopPresentationController.h */,
+				1893FD562609D5D0009428DF /* ATPopPresentationController.m */,
+				187D12FD262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.h */,
+				187D12FE262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.m */,
+				1893FE5A2609DDB7009428DF /* UIViewController+ATPopTransition.h */,
+				1893FE5B2609DDB7009428DF /* UIViewController+ATPopTransition.m */,
 			);
 			path = ATPopTransition;
 			sourceTree = "<group>";
@@ -211,14 +216,15 @@
 			files = (
 				1893FE572609DC07009428DF /* HomeDetailViewController.m in Sources */,
 				1893FD422609D57F009428DF /* ViewController.m in Sources */,
+				187D1305262D3D3C00C846F8 /* BUAlertView.m in Sources */,
 				1893FD3C2609D57F009428DF /* AppDelegate.m in Sources */,
 				1893FD5C2609D94D009428DF /* ATPopInteractiveTransition.m in Sources */,
 				187D0AA32629348300C846F8 /* BaseNavigationController.m in Sources */,
 				1893FD4D2609D581009428DF /* main.m in Sources */,
-				1893FD3F2609D57F009428DF /* SceneDelegate.m in Sources */,
 				187D0C56262955E900C846F8 /* WebViewController.m in Sources */,
 				1893FE5C2609DDB7009428DF /* UIViewController+ATPopTransition.m in Sources */,
 				1893FE522609DBF9009428DF /* HomeViewController.m in Sources */,
+				187D12FF262D314400C846F8 /* ATPopScreenEdgePanGestureRecognizer.m in Sources */,
 				187D0AA7262947D700C846F8 /* ATPopNavigationController.m in Sources */,
 				1893FD572609D5D0009428DF /* ATPopPresentationController.m in Sources */,
 			);
@@ -371,7 +377,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo.ATPopTransitionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -390,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo.ATPopTransitionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
