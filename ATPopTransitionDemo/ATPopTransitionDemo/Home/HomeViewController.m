@@ -30,7 +30,7 @@
         
     HomeDetailViewController * vctl = [[HomeDetailViewController alloc] init];
     ATPopNavigationController * navCtl = [[ATPopNavigationController alloc] initWithRootViewController:vctl];
-    ATPopPresentationController *presentationController = [[ATPopPresentationController alloc] initWithPresentedViewController:navCtl presentingViewController:self];
+    ATPopPresentationController *presentationController = [[ATPopPresentationController alloc] initWithPresentedViewController:navCtl presentingViewController:self contentHeight:UIScreen.mainScreen.bounds.size.height*0.66];
     navCtl.transitioningDelegate = presentationController;
     [self presentViewController:navCtl animated:YES completion:nil];
 }

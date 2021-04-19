@@ -9,9 +9,8 @@
 #import "WebViewController.h"
 #import "ATPopNavigationController.h"
 #import "UIViewController+ATPopTransition.h"
-#import "BUAlertView.h"
 
-@interface HomeDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomeDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -48,25 +47,24 @@ int flag = 0;
         if(flag % 2 == 0){
             [weakself performSelector:@selector(showAlert) withObject:nil afterDelay:0.1];
         }else{
-            [weakself performSelector:@selector(change) withObject:nil afterDelay:0.1];
+            [weakself performSelector:@selector(didChange) withObject:nil afterDelay:0.1];
         }
         flag += 1;
     };
 }
 
-- (void)change{
+- (void)didChange{
     self.navigationController.atPop_canClose = YES;
 }
 
 - (void)showAlert{
-    BUAlertView *alert = [[BUAlertView alloc] init];
-    alert.containerView = [alert createContainerViewWithTitle:@"" msg:@"最多插入200个颜色"];
-    alert.buttonTitles = @[@"Confirm"];
-    [alert setMsgTextAlignment:NSTextAlignmentCenter];
-    alert.buttonClickedBlock = ^(NSInteger buttonTag) {
-        
-    };
-    [alert show];
+    [[[UIAlertView alloc] initWithTitle:nil message:@"还示保存，确定退出吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex != 0){
+        [self.navigationController ATPop_Dismiss];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -12,7 +12,6 @@
 		187D0C56262955E900C846F8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D0C54262955E900C846F8 /* WebViewController.m */; };
 		187D0C57262955E900C846F8 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D0C55262955E900C846F8 /* WebViewController.xib */; };
 		187D12FF262D314400C846F8 /* ATPopScreenEdgePanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D12FE262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.m */; };
-		187D1305262D3D3C00C846F8 /* BUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D1304262D3D3C00C846F8 /* BUAlertView.m */; };
 		1893FD3C2609D57F009428DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD3B2609D57F009428DF /* AppDelegate.m */; };
 		1893FD422609D57F009428DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893FD412609D57F009428DF /* ViewController.m */; };
 		1893FD452609D57F009428DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893FD432609D57F009428DF /* Main.storyboard */; };
@@ -37,8 +36,6 @@
 		187D0C55262955E900C846F8 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		187D12FD262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATPopScreenEdgePanGestureRecognizer.h; sourceTree = "<group>"; };
 		187D12FE262D314300C846F8 /* ATPopScreenEdgePanGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATPopScreenEdgePanGestureRecognizer.m; sourceTree = "<group>"; };
-		187D1303262D3D3C00C846F8 /* BUAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUAlertView.h; sourceTree = "<group>"; };
-		187D1304262D3D3C00C846F8 /* BUAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUAlertView.m; sourceTree = "<group>"; };
 		1893FD372609D57F009428DF /* ATPopTransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATPopTransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893FD3A2609D57F009428DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1893FD3B2609D57F009428DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,8 +90,6 @@
 		1893FD392609D57F009428DF /* ATPopTransitionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				187D1303262D3D3C00C846F8 /* BUAlertView.h */,
-				187D1304262D3D3C00C846F8 /* BUAlertView.m */,
 				1893FE4F2609DBE6009428DF /* Home */,
 				1893FD3A2609D57F009428DF /* AppDelegate.h */,
 				1893FD3B2609D57F009428DF /* AppDelegate.m */,
@@ -216,7 +211,6 @@
 			files = (
 				1893FE572609DC07009428DF /* HomeDetailViewController.m in Sources */,
 				1893FD422609D57F009428DF /* ViewController.m in Sources */,
-				187D1305262D3D3C00C846F8 /* BUAlertView.m in Sources */,
 				1893FD3C2609D57F009428DF /* AppDelegate.m in Sources */,
 				1893FD5C2609D94D009428DF /* ATPopInteractiveTransition.m in Sources */,
 				187D0AA32629348300C846F8 /* BaseNavigationController.m in Sources */,

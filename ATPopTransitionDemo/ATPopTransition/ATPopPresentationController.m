@@ -11,6 +11,7 @@
 @interface ATPopPresentationController()
 @property (nonatomic, strong) UIView *dismissView;
 @property (nonatomic, strong) UIView *replacePresentView;
+@property (nonatomic, assign) CGFloat contentHeight;
 @end
 
 @implementation ATPopPresentationController
@@ -24,13 +25,19 @@
 
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController
                        presentingViewController:(nullable UIViewController *)presentingViewController{
+    return [self initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController contentHeight:UIScreen.mainScreen.bounds.size.height];
+}
+
+- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController
+                       presentingViewController:(nullable UIViewController *)presentingViewController
+                                  contentHeight:(CGFloat)contentHeight{
     
     self =[super initWithPresentedViewController:presentedViewController
                         presentingViewController:presentingViewController];
     if (self) {
         // 自定义modalPresentationStyle
         presentedViewController.modalPresentationStyle= UIModalPresentationCustom;
-        self.contentHeight = UIScreen.mainScreen.bounds.size.height*(520/667.0);
+        self.contentHeight = contentHeight;
     }
     return self;
 }
