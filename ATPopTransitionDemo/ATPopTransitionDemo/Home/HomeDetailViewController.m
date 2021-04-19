@@ -35,26 +35,65 @@
     self.tableView.dataSource = self;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
     
+    
     //测试退出之前的提示
     [self testCloseAlert];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if(!self.navigationController){
+        [self testNotNavigationControllerAddGes];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    if(!self.navigationController){
+        [self testNotNavigationControllerRemoveGes];
+    }
+}
+
+- (void)testNotNavigationControllerAddGes{
+    [self ATPop_AddInteractiveGes];
+}
+- (void)testNotNavigationControllerRemoveGes{
+    [self ATPop_RemoveInteractiveGes];
+}
+
+
 int flag = 0;
 - (void)testCloseAlert{
-    self.navigationController.atPop_openConfirmClose = YES;
     __weak typeof(self) weakself = self;
-    self.navigationController.atPop_onBeginGesBlock = ^{
-        if(flag % 2 == 0){
-            [weakself performSelector:@selector(showAlert) withObject:nil afterDelay:0.1];
-        }else{
-            [weakself performSelector:@selector(didChange) withObject:nil afterDelay:0.1];
-        }
-        flag += 1;
-    };
+    if(self.navigationController){
+        self.navigationController.atPop_openConfirmClose = YES;
+        self.navigationController.atPop_onBeginGesBlock = ^{
+            if(flag % 2 == 0){
+                [weakself performSelector:@selector(showAlert) withObject:nil afterDelay:0.1];
+            }else{
+                [weakself performSelector:@selector(didChange) withObject:nil afterDelay:0.1];
+            }
+            flag += 1;
+        };
+    }else{
+        self.atPop_openConfirmClose = YES;
+        self.atPop_onBeginGesBlock = ^{
+            if(flag % 2 == 0){
+                [weakself performSelector:@selector(showAlert) withObject:nil afterDelay:0.1];
+            }else{
+                [weakself performSelector:@selector(didChange) withObject:nil afterDelay:0.1];
+            }
+            flag += 1;
+        };
+    }
+    
 }
 
 - (void)didChange{
-    self.navigationController.atPop_canClose = YES;
+    if(self.navigationController){
+        self.navigationController.atPop_canClose = YES;
+    }else{
+        self.atPop_canClose = YES;
+    }
 }
 
 - (void)showAlert{
@@ -63,7 +102,11 @@ int flag = 0;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex != 0){
-        [self.navigationController ATPop_Dismiss];
+        if(self.navigationController){
+            [self.navigationController ATPop_Dismiss];
+        }else{
+            [self ATPop_Dismiss];
+        }
     }
 }
 
